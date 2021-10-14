@@ -1,0 +1,16 @@
+.shop-navbar {
+  border-color: rgb(57, 57, 52)!important;
+}
+
+.logo-img:hover {
+  opacity: 0.7;
+}
+
+.nav-link {
+  color: rgb(57, 57, 52) !important;
+
+}
+
+.nav-link:hover{
+  opacity: 0.7;
+}
