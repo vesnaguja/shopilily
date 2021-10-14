@@ -15,7 +15,7 @@ const HomePage = () => {
     <Container className="py-5">
       <Row className="g-3">
         {allProducts.map((product) => (
-          <ProductCard product={product} />
+          <ProductCard product={product} key={product.id} />
         ))}
       </Row>
     </Container>

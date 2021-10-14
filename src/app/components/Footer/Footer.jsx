@@ -2,9 +2,9 @@ import "./Footer.css";
 
 const Footer = () => {
   return (
-    <footer class="bg-white text-center text-dark border-top border-2 shop-footer">
-      <div class="text-center p-3">Copyright © 2021 Vesna Grujanic</div>
-    </footer>
+    <div className="container-fluid d-flex flex-column min-vh-100">
+      <footer class="mt-auto bg-white text-center text-dark border-top border-2 shop-footer py-2">Copyright © 2021 Vesna Grujanic</footer>
+    </div>
   );
 };
 
