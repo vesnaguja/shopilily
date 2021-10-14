@@ -3,6 +3,14 @@
   color: black;
 }
 
-.crop img {
+.product-img {
   max-width: 35%;
+}
+
+.product-img:hover{
+  opacity: 0.8;
+}
+
+.product-title:hover {
+  text-decoration: underline;
 }
