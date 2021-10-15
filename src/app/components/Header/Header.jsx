@@ -20,15 +20,16 @@ const Header = () => {
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="">
-            <Link to="/" className="nav-link">
-              {" "}
+            <Link to="/" className="nav-link">        
               home
             </Link>
 
             {allCategories.map((category) => (
-              <Nav.Link href="#link" className="nav-link">
-                {category}
-              </Nav.Link>
+              <Link to={`/products/category/${category}`}  className="nav-link">
+                 {category}
+              </Link> 
+             
+             
             ))}
 
             <NavDropdown title="login" id="basic-nav-dropdown">

@@ -4,17 +4,20 @@ import HomePage from "./pages/HomePage/HomePage";
 import Header from "./components/Header/Header";
 import Footer from "./components/Footer/Footer";
 import SingleProductPage from "./pages/SingleProductPage/SingleProductPage";
+import ElectronicsPage from "./pages/ElectronicsPage/ElectronicsPage";
+import { Fragment } from "react";
 
 function App() {
   return (
-    <div className="App">
+    <Fragment>
       <Header />
       <Switch>
         <Route exact path="/" component={HomePage} />
         <Route exact path="/products/:id" component={SingleProductPage} />
+        <Route exact path="/products/category/electronics" component={ElectronicsPage} />
       </Switch>
       <Footer />
-    </div>
+    </Fragment>
   );
 }
 
