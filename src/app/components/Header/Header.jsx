@@ -2,9 +2,11 @@ import { useEffect, useState } from "react";
 import { Container, Image, Nav, Navbar, NavDropdown } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import { getAllCategories } from "../../../services/CategoriesService";
+import { RiSearch2Line } from "react-icons/ri";
 import "./Header.css";
+import Search from "../Search/Search";
 
-const Header = () => {
+const Header = ({ onTypingHandler }) => {
   const [allCategories, setAllCategories] = useState([]);
 
   useEffect(() => {
@@ -12,7 +14,7 @@ const Header = () => {
   }, []);
 
   return (
-    <Navbar expand="lg" id="prodzica-header" className="p-0 fs-5 bg-white border-bottom border-2 shop-navbar">
+    <Navbar expand="lg" id="prodzica-header" className="p-0 fs-6 bg-white border-bottom shop-navbar">
       <Container>
         <Link to="/">
           <Image src="./images/shop5.png" className="logo-img" />
@@ -20,16 +22,14 @@ const Header = () => {
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="">
-            <Link to="/" className="nav-link">        
+            <Link to="/" className="nav-link">
               home
             </Link>
 
             {allCategories.map((category) => (
-              <Link to={`/products/category/${category}`}  className="nav-link">
-                 {category}
-              </Link> 
-             
-             
+              <Link to={`/products/category/${category}`} className="nav-link">
+                {category}
+              </Link>
             ))}
 
             <NavDropdown title="login" id="basic-nav-dropdown">
@@ -41,6 +41,10 @@ const Header = () => {
             </NavDropdown>
           </Nav>
         </Navbar.Collapse>
+
+        <Search onTypingHandler={onTypingHandler} />
+        <RiSearch2Line size="30px" className="search-icon" />
+        
       </Container>
     </Navbar>
   );
