@@ -32,7 +32,7 @@ function App() {
       <Header onTypingHandler={onTypingHandler} />
       <Switch>
         <Route exact path="/">
-          <HomePage searchedProduct={searchedProduct} />{" "}
+          <HomePage searchedProduct={searchedProduct} />
         </Route>
         <Route exact path="/products/:id" component={SingleProductPage} />
         <Route exact path="/products/category/electronics" component={ElectronicsPage} />
