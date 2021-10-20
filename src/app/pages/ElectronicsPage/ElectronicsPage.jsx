@@ -1,8 +1,8 @@
 import { useEffect } from "react";
 import { useState } from "react";
 import { Container, Row } from "react-bootstrap";
-import { getElectronics } from "../../../services/ElectronicsService";
 import ProductCard from "../../components/ProductCard/ProductCard";
+import { getElectronics } from "../../../services/ElectronicsService";
 
 const ElectronicsPage = () => {
   const [electronicsProducts, setElectronicsProduct] = useState([]);

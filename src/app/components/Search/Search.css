@@ -1,0 +1,12 @@
+.search:focus,
+.search:hover,
+.search:active {
+  outline: 0px !important;
+  -webkit-appearance: none;
+  box-shadow: none !important;
+}
+
+.search {
+  border-color: rgb(56, 56, 51) !important;
+  width: 50vh;
+}
