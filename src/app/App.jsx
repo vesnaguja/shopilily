@@ -10,8 +10,10 @@ import { Fragment, useEffect, useState } from "react";
 import MensClothingPage from "./pages/MensClothingPage/MensClothingPage";
 import WomensClothingPage from "./pages/WomensClothingPage/WomensClothingPage";
 import { getAllProducts } from "../services/AllProductsService";
+import Loader from "./components/Loader/Loader";
 
 function App() {
+  const [loading, setLoading] = useState(true);
   const [allProducts, setAllProducts] = useState([]);
   const [searchedProduct, setSearchedProduct] = useState([]);
 
@@ -19,6 +21,7 @@ function App() {
     getAllProducts().then((res) => {
       setAllProducts(res);
       setSearchedProduct(res);
+      setLoading(false);
     });
   }, []);
 
@@ -32,7 +35,7 @@ function App() {
       <Header onTypingHandler={onTypingHandler} />
       <Switch>
         <Route exact path="/">
-          <HomePage searchedProduct={searchedProduct} />
+          {loading ? <Loader /> : <HomePage searchedProduct={searchedProduct} />}
         </Route>
         <Route exact path="/products/:id" component={SingleProductPage} />
         <Route exact path="/products/category/electronics" component={ElectronicsPage} />
